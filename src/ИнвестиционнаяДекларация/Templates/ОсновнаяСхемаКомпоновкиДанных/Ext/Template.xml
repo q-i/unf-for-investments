@@ -44,32 +44,25 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>КоличествоФакт</dataPath>
 			<field>КоличествоФакт</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Количество факт</v8:content>
-				</v8:item>
-			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>СуммаФакт</dataPath>
 			<field>СуммаФакт</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Сумма факт</v8:content>
-				</v8:item>
-			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ДоляВПроцентахФакт</dataPath>
 			<field>ДоляВПроцентахФакт</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Доля в процентах факт</v8:content>
-				</v8:item>
-			</title>
 			<appearance>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>Формат</dcscor:parameter>
@@ -85,12 +78,6 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ДоляПлан</dataPath>
 			<field>ДоляПлан</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Доля план</v8:content>
-				</v8:item>
-			</title>
 			<appearance>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
@@ -102,12 +89,6 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>КоличествоПлан</dataPath>
 			<field>КоличествоПлан</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Количество план</v8:content>
-				</v8:item>
-			</title>
 			<appearance>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>Формат</dcscor:parameter>
@@ -123,12 +104,6 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ДоляВПроцентахПлан</dataPath>
 			<field>ДоляВПроцентахПлан</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Доля в процентах план</v8:content>
-				</v8:item>
-			</title>
 			<appearance>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>Формат</dcscor:parameter>
@@ -142,14 +117,19 @@
 			</appearance>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>КоличествоИзСпецификацииПлан</dataPath>
-			<field>КоличествоИзСпецификацииПлан</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Количество из спецификации план</v8:content>
-				</v8:item>
-			</title>
+			<dataPath>СуммаПлан</dataPath>
+			<field>СуммаПлан</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
@@ -173,7 +153,7 @@
 ИЗ
 	Справочник.Спецификации.Состав КАК СпецификацииСостав
 ГДЕ
-	СпецификацииСостав.Ссылка = &amp;ИнвестДекларция
+	СпецификацииСостав.Ссылка = &amp;ИнвестДекларация
 
 СГРУППИРОВАТЬ ПО
 	СпецификацииСостав.Номенклатура
@@ -189,10 +169,10 @@
 			ТОГДА ВТ_Остатки.СуммаФакт / ОбщаяСуммаФакт.СуммаФакт * 100
 		ИНАЧЕ 0
 	КОНЕЦ КАК ДоляВПроцентахФакт,
-	0 КАК КоличествоИзСпецификацииПлан,
 	0 КАК КоличествоПлан,
-	0 КАК ДоляПлан,
-	0 КАК ДоляВПроцентахПлан
+	0 КАК СуммаПлан,
+	0 КАК ДоляВПроцентахПлан,
+	0 КАК ДоляПлан
 ИЗ
 	ВТ_Остатки КАК ВТ_Остатки
 		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
@@ -208,29 +188,37 @@
 	0,
 	0,
 	0,
-	ВТ_СтрокиИнвестДекларации.КоличествоИзСпецификацииПлан,
+	ВЫБОР
+		КОГДА &amp;ИсточникДляКоличествоПлан = "Спецификация"
+			ТОГДА ВТ_СтрокиИнвестДекларации.КоличествоИзСпецификацииПлан
+		ИНАЧЕ ВЫБОР
+				КОГДА СуммаДолейПлан.ДоляПлан &lt;&gt; 0
+						И ЕСТЬNULL(ЦеныНоменклатурыСрезПоследних.Цена, 0) &lt;&gt; 0
+					ТОГДА &amp;СуммаИнвестицийПлан * ВТ_СтрокиИнвестДекларации.ДоляПлан / СуммаДолейПлан.ДоляПлан / ЦеныНоменклатурыСрезПоследних.Цена
+				ИНАЧЕ 0
+			КОНЕЦ
+	КОНЕЦ,
 	ВЫБОР
 		КОГДА СуммаДолейПлан.ДоляПлан &lt;&gt; 0
-				И ЕСТЬNULL(ЦеныНоменклатурыСрезПоследних.Цена, 0) &lt;&gt; 0
-			ТОГДА &amp;СуммаИнвестицийПлан * ВТ_СтрокиИнвестДекларации.ДоляПлан / СуммаДолейПлан.ДоляПлан / ЦеныНоменклатурыСрезПоследних.Цена
+			ТОГДА &amp;СуммаИнвестицийПлан * ВТ_СтрокиИнвестДекларации.ДоляПлан / СуммаДолейПлан.ДоляПлан
 		ИНАЧЕ 0
 	КОНЕЦ,
-	ВТ_СтрокиИнвестДекларации.ДоляПлан,
 	ВЫБОР
 		КОГДА СуммаДолейПлан.ДоляПлан &lt;&gt; 0
 			ТОГДА ВТ_СтрокиИнвестДекларации.ДоляПлан / СуммаДолейПлан.ДоляПлан * 100
 		ИНАЧЕ 0
-	КОНЕЦ
+	КОНЕЦ,
+	ВТ_СтрокиИнвестДекларации.ДоляПлан
 ИЗ
 	ВТ_СтрокиИнвестДекларации КАК ВТ_СтрокиИнвестДекларации
-		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныНоменклатуры.СрезПоследних({(&amp;ДатаОтчета)}, ВидЦен = &amp;ВидЦен) КАК ЦеныНоменклатурыСрезПоследних
-		ПО ВТ_СтрокиИнвестДекларации.Номенклатура = ЦеныНоменклатурыСрезПоследних.Номенклатура
-			И (ЦеныНоменклатурыСрезПоследних.Характеристика = ЗНАЧЕНИЕ(Справочник.ХарактеристикиНоменклатуры.ПустаяСсылка))
 		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
 			СУММА(ВТ_СтрокиИнвестДекларации.ДоляПлан) КАК ДоляПлан
 		ИЗ
 			ВТ_СтрокиИнвестДекларации КАК ВТ_СтрокиИнвестДекларации) КАК СуммаДолейПлан
-		ПО (ИСТИНА)</query>
+		ПО (ИСТИНА)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныНоменклатуры.СрезПоследних({(&amp;ДатаОтчета)}, ВидЦен = &amp;ВидЦен) КАК ЦеныНоменклатурыСрезПоследних
+		ПО ВТ_СтрокиИнвестДекларации.Номенклатура = ЦеныНоменклатурыСрезПоследних.Номенклатура
+			И (ЦеныНоменклатурыСрезПоследних.Характеристика = ЗНАЧЕНИЕ(Справочник.ХарактеристикиНоменклатуры.ПустаяСсылка))</query>
 	</dataSet>
 	<calculatedField>
 		<dataPath>РазницаКоличество</dataPath>
@@ -282,6 +270,31 @@
 			</dcscor:item>
 		</appearance>
 	</calculatedField>
+	<calculatedField>
+		<dataPath>РазницаСумма</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Разница сумма</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
 	<totalField>
 		<dataPath>ДоляВПроцентахПлан</dataPath>
 		<expression>Сумма(ДоляВПроцентахПлан)</expression>
@@ -297,14 +310,12 @@
 	<totalField>
 		<dataPath>КоличествоПлан</dataPath>
 		<expression>Сумма(КоличествоПлан)</expression>
+		<group>Номенклатура</group>
 	</totalField>
 	<totalField>
 		<dataPath>КоличествоФакт</dataPath>
 		<expression>Сумма(КоличествоФакт)</expression>
-	</totalField>
-	<totalField>
-		<dataPath>СуммаФакт</dataPath>
-		<expression>Сумма(СуммаФакт)</expression>
+		<group>Номенклатура</group>
 	</totalField>
 	<totalField>
 		<dataPath>РазницаДолиВПроцентах</dataPath>
@@ -313,10 +324,19 @@
 	<totalField>
 		<dataPath>РазницаКоличество</dataPath>
 		<expression>Сумма(КоличествоПлан) - Сумма(КоличествоФакт)</expression>
+		<group>Номенклатура</group>
 	</totalField>
 	<totalField>
-		<dataPath>КоличествоИзСпецификацииПлан</dataPath>
-		<expression>Сумма(КоличествоИзСпецификацииПлан)</expression>
+		<dataPath>РазницаСумма</dataPath>
+		<expression>Сумма(СуммаПлан) - Сумма(СуммаФакт)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаПлан</dataPath>
+		<expression>Сумма(СуммаПлан)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаФакт</dataPath>
+		<expression>Сумма(СуммаФакт)</expression>
 	</totalField>
 	<parameter>
 		<name>ДатаОтчета</name>
@@ -336,11 +356,11 @@
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
-		<name>ИнвестДекларция</name>
+		<name>ИнвестДекларация</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Инвест. декларция (спецификация)</v8:content>
+				<v8:content>Инвест.декларация (спецификация)</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
@@ -363,6 +383,7 @@
 		</valueType>
 		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
 	</parameter>
 	<parameter>
 		<name>СуммаИнвестицийПлан</name>
@@ -375,36 +396,163 @@
 		<valueType>
 			<v8:Type>xs:decimal</v8:Type>
 			<v8:NumberQualifiers>
-				<v8:Digits>0</v8:Digits>
-				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:Digits>20</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
 				<v8:AllowedSign>Any</v8:AllowedSign>
 			</v8:NumberQualifiers>
 		</valueType>
 		<value xsi:type="xs:decimal">0</value>
 		<useRestriction>false</useRestriction>
 	</parameter>
+	<parameter>
+		<name>ИсточникДляКоличествоПлан</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Источник для "Количество (план)"</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>50</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>false</useRestriction>
+		<availableValue>
+			<value xsi:type="xs:string">Спецификация</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Брать из спецификации</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="xs:string">ВычислятьПоСуммеИнвестиций</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вычислять исходя из "Сумма инвестиций (план)"</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
 		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ДоляВПроцентахФакт</dcsset:field>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доля, %</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДоляВПроцентахПлан</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>План</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДоляВПроцентахФакт</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Факт</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>РазницаДолиВПроцентах</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Разность</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
 				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ДоляВПроцентахПлан</dcsset:field>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоПлан</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>План</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоФакт</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Факт</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>РазницаКоличество</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Разность</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
 				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>РазницаДолиВПроцентах</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КоличествоФакт</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КоличествоПлан</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>РазницаКоличество</dcsset:field>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаПлан</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>План</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаФакт</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Факт</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>РазницаСумма</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Разность</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:filter>
@@ -430,9 +578,9 @@
 					<dcsset:userSettingID>44a73c1c-eb47-4c0b-91da-e05a65aa080f</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ИнвестДекларция</dcscor:parameter>
+					<dcscor:parameter>ИнвестДекларация</dcscor:parameter>
 					<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.Спецификации.ПустаяСсылка</dcscor:value>
-					<dcsset:userSettingID>a30c5a94-0261-4ed1-b048-747a8e79af77</dcsset:userSettingID>
+					<dcsset:userSettingID>9f728d37-7af2-47a8-b463-c6c8ccc51b30</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ВидЦен</dcscor:parameter>
@@ -442,6 +590,11 @@
 					<dcscor:parameter>СуммаИнвестицийПлан</dcscor:parameter>
 					<dcscor:value xsi:type="xs:decimal">1000000</dcscor:value>
 					<dcsset:userSettingID>360cf23b-90df-4a1e-8bfa-2bc413895b36</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ИсточникДляКоличествоПлан</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ВычислятьПоСуммеИнвестиций</dcscor:value>
+					<dcsset:userSettingID>45c7ac09-521c-4058-8485-5c13885b8d54</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>
