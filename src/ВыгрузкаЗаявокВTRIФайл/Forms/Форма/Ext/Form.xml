@@ -26,6 +26,14 @@
 						<Value xsi:type="xs:string">Тэйк-профит</Value>
 					</xr:Value>
 				</xr:Item>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation/>
+						<Value xsi:type="xs:string">Стоп-цена по другой бумаге</Value>
+					</xr:Value>
+				</xr:Item>
 			</ChoiceList>
 			<ContextMenu name="ВидЗаявкиКонтекстноеМеню" id="16"/>
 			<ExtendedTooltip name="ВидЗаявкиРасширеннаяПодсказка" id="17"/>
@@ -45,6 +53,41 @@
 			<ContextMenu name="КодКлиентаКонтекстноеМеню" id="10"/>
 			<ExtendedTooltip name="КодКлиентаРасширеннаяПодсказка" id="11"/>
 		</InputField>
+		<InputField name="КодКласса" id="21">
+			<DataPath>КодКласса</DataPath>
+			<DropListButton>true</DropListButton>
+			<ContextMenu name="КодКлассаКонтекстноеМеню" id="22"/>
+			<ExtendedTooltip name="КодКлассаРасширеннаяПодсказка" id="23"/>
+		</InputField>
+		<UsualGroup name="ГруппаСпредОтступ" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа спред отступ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа спред отступ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСпредОтступРасширеннаяПодсказка" id="31"/>
+			<ChildItems>
+				<InputField name="ОтступПроц" id="27">
+					<DataPath>ОтступПроц</DataPath>
+					<ContextMenu name="ОтступПроцКонтекстноеМеню" id="28"/>
+					<ExtendedTooltip name="ОтступПроцРасширеннаяПодсказка" id="29"/>
+				</InputField>
+				<InputField name="ЗащитныйСпрэдПроц" id="24">
+					<DataPath>ЗащитныйСпрэдПроц</DataPath>
+					<ContextMenu name="ЗащитныйСпрэдПроцКонтекстноеМеню" id="25"/>
+					<ExtendedTooltip name="ЗащитныйСпрэдПроцРасширеннаяПодсказка" id="26"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 		<InputField name="НачЗначTransID" id="18">
 			<DataPath>НачЗначTransID</DataPath>
 			<ContextMenu name="НачЗначTransIDКонтекстноеМеню" id="19"/>
@@ -173,6 +216,62 @@
 			</Type>
 			<Save>
 				<Field>НачЗначTransID</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="КодКласса" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код класса</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>КодКласса</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ЗащитныйСпрэдПроц" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Защитный спрэд %</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<Save>
+				<Field>ЗащитныйСпрэдПроц</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ОтступПроц" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отступ %</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<Save>
+				<Field>ОтступПроц</Field>
 			</Save>
 		</Attribute>
 	</Attributes>
