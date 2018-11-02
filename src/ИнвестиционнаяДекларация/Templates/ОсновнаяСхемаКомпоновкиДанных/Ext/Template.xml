@@ -133,19 +133,6 @@
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	ЗапасыОстатки.Номенклатура КАК Номенклатура,
-	ЗапасыОстатки.КоличествоОстаток КАК КоличествоФакт,
-	ЗапасыОстатки.КоличествоОстаток * ЕСТЬNULL(ЦеныНоменклатурыСрезПоследних.Цена, 0) КАК СуммаФакт
-ПОМЕСТИТЬ ВТ_Остатки
-ИЗ
-	РегистрНакопления.Запасы.Остатки({(&amp;ДатаОтчета)}, ) КАК ЗапасыОстатки
-		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныНоменклатуры.СрезПоследних({(&amp;ДатаОтчета)}, ВидЦен = &amp;ВидЦен) КАК ЦеныНоменклатурыСрезПоследних
-		ПО ЗапасыОстатки.Номенклатура = ЦеныНоменклатурыСрезПоследних.Номенклатура
-			И (ЦеныНоменклатурыСрезПоследних.Характеристика = ЗНАЧЕНИЕ(Справочник.ХарактеристикиНоменклатуры.ПустаяСсылка))
-;
-
-////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
 	СпецификацииСостав.Номенклатура КАК Номенклатура,
 	СУММА(СпецификацииСостав.Количество) КАК КоличествоИзСпецификацииПлан,
 	СУММА(СпецификацииСостав.ДоляСтоимости) КАК ДоляПлан
@@ -157,6 +144,26 @@
 
 СГРУППИРОВАТЬ ПО
 	СпецификацииСостав.Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗапасыОстатки.Номенклатура КАК Номенклатура,
+	ЗапасыОстатки.КоличествоОстаток КАК КоличествоФакт,
+	ЗапасыОстатки.КоличествоОстаток * ЕСТЬNULL(ЦеныНоменклатурыСрезПоследних.Цена, 0) КАК СуммаФакт
+ПОМЕСТИТЬ ВТ_Остатки
+ИЗ
+	РегистрНакопления.Запасы.Остатки(
+			{(&amp;ДатаОтчета)},
+			НЕ &amp;ТолькоНоменклатураИзИнвестДекларации
+				ИЛИ Номенклатура В
+					(ВЫБРАТЬ
+						ВТ_СтрокиИнвестДекларации.Номенклатура
+					ИЗ
+						ВТ_СтрокиИнвестДекларации)) КАК ЗапасыОстатки
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныНоменклатуры.СрезПоследних({(&amp;ДатаОтчета)}, ВидЦен = &amp;ВидЦен) КАК ЦеныНоменклатурыСрезПоследних
+		ПО ЗапасыОстатки.Номенклатура = ЦеныНоменклатурыСрезПоследних.Номенклатура
+			И (ЦеныНоменклатурыСрезПоследних.Характеристика = ЗНАЧЕНИЕ(Справочник.ХарактеристикиНоменклатуры.ПустаяСсылка))
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -323,12 +330,12 @@
 	</totalField>
 	<totalField>
 		<dataPath>РазницаКоличество</dataPath>
-		<expression>Сумма(КоличествоПлан) - Сумма(КоличествоФакт)</expression>
+		<expression>Сумма(КоличествоФакт) - Сумма(КоличествоПлан)</expression>
 		<group>Номенклатура</group>
 	</totalField>
 	<totalField>
 		<dataPath>РазницаСумма</dataPath>
-		<expression>Сумма(СуммаПлан) - Сумма(СуммаФакт)</expression>
+		<expression>Сумма(СуммаФакт) - Сумма(СуммаПлан)</expression>
 	</totalField>
 	<totalField>
 		<dataPath>СуммаПлан</dataPath>
@@ -369,6 +376,7 @@
 		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
 		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>ВидЦен</name>
@@ -384,6 +392,7 @@
 		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
 		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>СуммаИнвестицийПлан</name>
@@ -403,6 +412,7 @@
 		</valueType>
 		<value xsi:type="xs:decimal">0</value>
 		<useRestriction>false</useRestriction>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>ИсточникДляКоличествоПлан</name>
@@ -440,6 +450,22 @@
 			</presentation>
 		</availableValue>
 		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ТолькоНоменклатураИзИнвестДекларации</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Только номенклатура из инвест.декларации</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
@@ -560,7 +586,6 @@
 					<dcsset:use>false</dcsset:use>
 					<dcsset:left xsi:type="dcscor:Field">Номенклатура</dcsset:left>
 					<dcsset:comparisonType>InHierarchy</dcsset:comparisonType>
-					<dcsset:userSettingID>a31ad539-8ca0-47a1-a620-a6a1503148a8</dcsset:userSettingID>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
 					<dcsset:use>false</dcsset:use>
@@ -595,6 +620,11 @@
 					<dcscor:parameter>ИсточникДляКоличествоПлан</dcscor:parameter>
 					<dcscor:value xsi:type="xs:string">ВычислятьПоСуммеИнвестиций</dcscor:value>
 					<dcsset:userSettingID>45c7ac09-521c-4058-8485-5c13885b8d54</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ТолькоНоменклатураИзИнвестДекларации</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					<dcsset:userSettingID>af5b80a9-7d26-409d-aaae-d3f5c5d8e298</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>
