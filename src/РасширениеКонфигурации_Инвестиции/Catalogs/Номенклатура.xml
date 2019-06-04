@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<Catalog uuid="b39d8dc6-de4e-41a7-a03b-8df68bb1ba93">
+		<InternalInfo>
+			<xr:GeneratedType name="CatalogObject.Номенклатура" category="Object">
+				<xr:TypeId>d08cfe33-ef0a-4d3e-a2ea-4e4923b4b143</xr:TypeId>
+				<xr:ValueId>43fd735f-0677-4adc-9023-7ac8c0870631</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogRef.Номенклатура" category="Ref">
+				<xr:TypeId>4dff2598-a3bc-462b-a1cb-2cf166c02b73</xr:TypeId>
+				<xr:ValueId>3f8fe314-ac85-49a2-85c5-186939545bb2</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogSelection.Номенклатура" category="Selection">
+				<xr:TypeId>0173c62a-9a5d-42f0-8283-374bcceda6fb</xr:TypeId>
+				<xr:ValueId>32d651aa-e3dd-42d0-ae61-1dfc0af2b5d1</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogList.Номенклатура" category="List">
+				<xr:TypeId>3ead290f-cf04-4944-8c7d-11380ec358cc</xr:TypeId>
+				<xr:ValueId>7c8e5d8f-78e5-4069-909b-2ad85b93d0cb</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogManager.Номенклатура" category="Manager">
+				<xr:TypeId>4de5948f-5545-4a18-9246-30644c917fce</xr:TypeId>
+				<xr:ValueId>d16c2cc0-0304-436c-857e-5143003861ca</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>Номенклатура</Name>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<DefaultListForm>Catalog.Номенклатура.Form.Инв_ФормаСписка</DefaultListForm>
+		</Properties>
+		<ChildObjects>
+			<Form>Инв_ФормаСписка</Form>
+		</ChildObjects>
+	</Catalog>
+</MetaDataObject>

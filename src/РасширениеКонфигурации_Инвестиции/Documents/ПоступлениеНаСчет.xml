@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<Document uuid="807e9242-7ef6-4f4b-a9af-391865f58469">
+		<InternalInfo>
+			<xr:GeneratedType name="DocumentObject.ПоступлениеНаСчет" category="Object">
+				<xr:TypeId>27d9d07c-f3de-4a7f-81f9-5ad76638a55a</xr:TypeId>
+				<xr:ValueId>5b836a16-3327-4669-8916-9e5595d0c349</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentRef.ПоступлениеНаСчет" category="Ref">
+				<xr:TypeId>13b1a311-8286-492d-81c6-858d1b8700bb</xr:TypeId>
+				<xr:ValueId>98f20620-dc32-4622-bd5e-18a47da9d804</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentSelection.ПоступлениеНаСчет" category="Selection">
+				<xr:TypeId>3aa7789f-b8fb-447f-987f-3b5a6b1557f2</xr:TypeId>
+				<xr:ValueId>2749b0c2-7a3d-4245-a3d6-364317404b4c</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentList.ПоступлениеНаСчет" category="List">
+				<xr:TypeId>62a513b6-7788-4e63-8855-b6dcd4081739</xr:TypeId>
+				<xr:ValueId>b1082fff-7d09-4aa9-9379-27b568bc5941</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentManager.ПоступлениеНаСчет" category="Manager">
+				<xr:TypeId>dfb167f8-fe09-4d72-9ac5-025859be5eb6</xr:TypeId>
+				<xr:ValueId>628485e6-28c9-471b-bfed-7ea7f4d7b87d</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>ПоступлениеНаСчет</Name>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+		</Properties>
+		<ChildObjects/>
+	</Document>
+</MetaDataObject>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.4">
+	<ConfigVersions>
+		<Metadata name="Catalog.Номенклатура" id="b39d8dc6-de4e-41a7-a03b-8df68bb1ba93" configVersion="e10ce5ba85c9b9731ff5563b789ea612d3c212f7"/>
+		<Metadata name="Catalog.Номенклатура.Form.Инв_ФормаСписка" id="877f7143-eea1-4921-848d-f39cf151f82c" configVersion="8d0843c916a0c2e6bce7ca391916a9f0d9fc712a"/>
+		<Metadata name="Catalog.Номенклатура.Form.Инв_ФормаСписка.Form" id="877f7143-eea1-4921-848d-f39cf151f82c.0" configVersion="00b6312b7ad6a6383c24becced919ea2ffd62389"/>
+		<Metadata name="CommonModule.Инв_ОбщегоНазначения" id="556d9627-74c1-46dc-988b-2e04c5f17195" configVersion="fb278d97debdfb263936a8f8cd82557212fe8721"/>
+		<Metadata name="CommonModule.Инв_ОбщегоНазначения.Module" id="556d9627-74c1-46dc-988b-2e04c5f17195.0" configVersion="b2bbc78459a12b36677e510d2002b9a67cbe51f7"/>
+		<Metadata name="CommonModule.ИнтернетПоддержкаПользователей" id="78d52076-f941-4a68-acaa-443d3a8b743f" configVersion="209757373c92ac0e6f420f10f01c43485314077e"/>
+		<Metadata name="CommonModule.ИнтернетПоддержкаПользователей.Module" id="78d52076-f941-4a68-acaa-443d3a8b743f.0" configVersion="1854318f8771f5efb100520f62331da9cfbac9d5"/>
+		<Metadata name="Configuration.Инвестиции" id="4c3c16a1-a19f-4b4c-bf08-0cda3de10ac3" configVersion="370d376025f8432a3e03b06585eeaf69751a49d4"/>
+		<Metadata name="Document.ПоступлениеНаСчет" id="807e9242-7ef6-4f4b-a9af-391865f58469" configVersion="40e69b274c9f04b748a3aeb1c1d8dc60d9a681f9"/>
+		<Metadata name="Document.ПоступлениеНаСчет.ObjectModule" id="807e9242-7ef6-4f4b-a9af-391865f58469.0" configVersion="f022bae463344fd094e68324a2de6f77b2ead2c2"/>
+		<Metadata name="Document.ПриходнаяНакладная" id="d408ab78-91a4-466c-93bf-ed7f7949b28f" configVersion="d72b9e16d8f5a463e8a9ba254fff9d0661b48d33"/>
+		<Metadata name="Document.ПриходнаяНакладная.ObjectModule" id="d408ab78-91a4-466c-93bf-ed7f7949b28f.0" configVersion="2212f7bfcf351d4e03ab8c700a6bc88db42a1c4c"/>
+		<Metadata name="Document.РасходСоСчета" id="2cd354ca-6b39-45ed-8fe1-e3bddb4f7d4b" configVersion="82b7c81a2cc696fdbb4dcf6cef7a2627d6466bf6"/>
+		<Metadata name="Document.РасходСоСчета.ObjectModule" id="2cd354ca-6b39-45ed-8fe1-e3bddb4f7d4b.0" configVersion="6d2309db9dfa3fd0a59d398c2047b2469a579ca7"/>
+		<Metadata name="Document.РасходнаяНакладная" id="4f832152-93a3-49e6-9b40-0208e90796b7" configVersion="0b5e4ee0c01a4c64fd70801962b514bd72680a5c"/>
+		<Metadata name="Document.РасходнаяНакладная.ObjectModule" id="4f832152-93a3-49e6-9b40-0208e90796b7.0" configVersion="2212f7bfcf351d4e03ab8c700a6bc88db42a1c4c"/>
+		<Metadata name="Language.Русский" id="e1fc48a1-0955-4592-9e9c-722557879b15" configVersion="024eeb910464b64ac8038e7ebe5a7873ef722f13"/>
+	</ConfigVersions>
+</ConfigDumpInfo>
