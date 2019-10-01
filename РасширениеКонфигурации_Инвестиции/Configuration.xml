@@ -53,6 +53,7 @@
 		</Properties>
 		<ChildObjects>
 			<Language>Русский</Language>
+			<Subsystem>ПодключаемыеОтчетыИОбработки</Subsystem>
 			<CommonModule>Инв_ОбщегоНазначения</CommonModule>
 			<CommonModule>ИнтернетПоддержкаПользователей</CommonModule>
 			<Catalog>Номенклатура</Catalog>
@@ -60,6 +61,7 @@
 			<Document>РасходнаяНакладная</Document>
 			<Document>РасходСоСчета</Document>
 			<Document>ПоступлениеНаСчет</Document>
+			<DataProcessor>Инв_ПечатьЗаказаПоставщику</DataProcessor>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>

@@ -8,7 +8,11 @@
 		<Metadata name="CommonModule.Инв_ОбщегоНазначения.Module" id="556d9627-74c1-46dc-988b-2e04c5f17195.0" configVersion="b2bbc78459a12b36677e510d2002b9a67cbe51f7"/>
 		<Metadata name="CommonModule.ИнтернетПоддержкаПользователей" id="78d52076-f941-4a68-acaa-443d3a8b743f" configVersion="209757373c92ac0e6f420f10f01c43485314077e"/>
 		<Metadata name="CommonModule.ИнтернетПоддержкаПользователей.Module" id="78d52076-f941-4a68-acaa-443d3a8b743f.0" configVersion="1854318f8771f5efb100520f62331da9cfbac9d5"/>
-		<Metadata name="Configuration.Инвестиции" id="4c3c16a1-a19f-4b4c-bf08-0cda3de10ac3" configVersion="370d376025f8432a3e03b06585eeaf69751a49d4"/>
+		<Metadata name="Configuration.Инвестиции" id="4c3c16a1-a19f-4b4c-bf08-0cda3de10ac3" configVersion="de1f02dcec56b8334b78112b70212539f33cd126"/>
+		<Metadata name="DataProcessor.Инв_ПечатьЗаказаПоставщику" id="264f8b20-6a2c-492f-9d67-27ee5790668a" configVersion="34f22cb1371f893816b55500c2b95e1d86d3bff4"/>
+		<Metadata name="DataProcessor.Инв_ПечатьЗаказаПоставщику.ManagerModule" id="264f8b20-6a2c-492f-9d67-27ee5790668a.2" configVersion="b9780d33baca86d969f291ae99fe8460cbf7a964"/>
+		<Metadata name="DataProcessor.Инв_ПечатьЗаказаПоставщику.Template.ПФ_MXL_ЗаказПоставщику" id="93b24910-4747-4ac2-8ec4-e9ab50827525" configVersion="60bbc1a412717305a2d3bdacd54be19579525523"/>
+		<Metadata name="DataProcessor.Инв_ПечатьЗаказаПоставщику.Template.ПФ_MXL_ЗаказПоставщику.Template" id="93b24910-4747-4ac2-8ec4-e9ab50827525.0" configVersion="cd05bfee367cf58def9780036d685c3ccac5b50c"/>
 		<Metadata name="Document.ПоступлениеНаСчет" id="807e9242-7ef6-4f4b-a9af-391865f58469" configVersion="40e69b274c9f04b748a3aeb1c1d8dc60d9a681f9"/>
 		<Metadata name="Document.ПоступлениеНаСчет.ObjectModule" id="807e9242-7ef6-4f4b-a9af-391865f58469.0" configVersion="f022bae463344fd094e68324a2de6f77b2ead2c2"/>
 		<Metadata name="Document.ПриходнаяНакладная" id="d408ab78-91a4-466c-93bf-ed7f7949b28f" configVersion="d72b9e16d8f5a463e8a9ba254fff9d0661b48d33"/>
@@ -18,5 +22,6 @@
 		<Metadata name="Document.РасходнаяНакладная" id="4f832152-93a3-49e6-9b40-0208e90796b7" configVersion="0b5e4ee0c01a4c64fd70801962b514bd72680a5c"/>
 		<Metadata name="Document.РасходнаяНакладная.ObjectModule" id="4f832152-93a3-49e6-9b40-0208e90796b7.0" configVersion="2212f7bfcf351d4e03ab8c700a6bc88db42a1c4c"/>
 		<Metadata name="Language.Русский" id="e1fc48a1-0955-4592-9e9c-722557879b15" configVersion="024eeb910464b64ac8038e7ebe5a7873ef722f13"/>
+		<Metadata name="Subsystem.ПодключаемыеОтчетыИОбработки" id="eab4e946-55d8-4eea-b9bc-fcbc129eca4c" configVersion="2fb0885ff4ee7fba96fe0ff85c5a4f3fd067b8e1"/>
 	</ConfigVersions>
 </ConfigDumpInfo>
