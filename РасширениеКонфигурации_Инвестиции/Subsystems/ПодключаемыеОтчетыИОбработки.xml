@@ -5,7 +5,7 @@
 			<Name>ПодключаемыеОтчетыИОбработки</Name>
 			<ObjectBelonging>Adopted</ObjectBelonging>
 			<Content>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.Инв_ПечатьЗаказаПоставщику</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.Инв_ПечатьТабЧастиЗапасы</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

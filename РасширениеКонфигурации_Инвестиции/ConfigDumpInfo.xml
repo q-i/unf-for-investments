@@ -9,10 +9,10 @@
 		<Metadata name="CommonModule.ИнтернетПоддержкаПользователей" id="78d52076-f941-4a68-acaa-443d3a8b743f" configVersion="209757373c92ac0e6f420f10f01c43485314077e"/>
 		<Metadata name="CommonModule.ИнтернетПоддержкаПользователей.Module" id="78d52076-f941-4a68-acaa-443d3a8b743f.0" configVersion="1854318f8771f5efb100520f62331da9cfbac9d5"/>
 		<Metadata name="Configuration.Инвестиции" id="4c3c16a1-a19f-4b4c-bf08-0cda3de10ac3" configVersion="de1f02dcec56b8334b78112b70212539f33cd126"/>
-		<Metadata name="DataProcessor.Инв_ПечатьЗаказаПоставщику" id="264f8b20-6a2c-492f-9d67-27ee5790668a" configVersion="34f22cb1371f893816b55500c2b95e1d86d3bff4"/>
-		<Metadata name="DataProcessor.Инв_ПечатьЗаказаПоставщику.ManagerModule" id="264f8b20-6a2c-492f-9d67-27ee5790668a.2" configVersion="b9780d33baca86d969f291ae99fe8460cbf7a964"/>
-		<Metadata name="DataProcessor.Инв_ПечатьЗаказаПоставщику.Template.ПФ_MXL_ЗаказПоставщику" id="93b24910-4747-4ac2-8ec4-e9ab50827525" configVersion="60bbc1a412717305a2d3bdacd54be19579525523"/>
-		<Metadata name="DataProcessor.Инв_ПечатьЗаказаПоставщику.Template.ПФ_MXL_ЗаказПоставщику.Template" id="93b24910-4747-4ac2-8ec4-e9ab50827525.0" configVersion="cd05bfee367cf58def9780036d685c3ccac5b50c"/>
+		<Metadata name="DataProcessor.Инв_ПечатьТабЧастиЗапасы" id="264f8b20-6a2c-492f-9d67-27ee5790668a" configVersion="c5f308ea1ccea3f3c76bdc8e5e6031541d1b559f"/>
+		<Metadata name="DataProcessor.Инв_ПечатьТабЧастиЗапасы.ManagerModule" id="264f8b20-6a2c-492f-9d67-27ee5790668a.2" configVersion="596f0b2be841f6fc7c8968e6afe3be5247c0dbdd"/>
+		<Metadata name="DataProcessor.Инв_ПечатьТабЧастиЗапасы.Template.ПФ_MXL_Запасы" id="93b24910-4747-4ac2-8ec4-e9ab50827525" configVersion="63e43cc0befab7c22ea88eff6a0ee17fa13fbefe"/>
+		<Metadata name="DataProcessor.Инв_ПечатьТабЧастиЗапасы.Template.ПФ_MXL_Запасы.Template" id="93b24910-4747-4ac2-8ec4-e9ab50827525.0" configVersion="116ed4b30ed3e3ee3e4accb80d1681ec60dd20bb"/>
 		<Metadata name="Document.ПоступлениеНаСчет" id="807e9242-7ef6-4f4b-a9af-391865f58469" configVersion="40e69b274c9f04b748a3aeb1c1d8dc60d9a681f9"/>
 		<Metadata name="Document.ПоступлениеНаСчет.ObjectModule" id="807e9242-7ef6-4f4b-a9af-391865f58469.0" configVersion="f022bae463344fd094e68324a2de6f77b2ead2c2"/>
 		<Metadata name="Document.ПриходнаяНакладная" id="d408ab78-91a4-466c-93bf-ed7f7949b28f" configVersion="d72b9e16d8f5a463e8a9ba254fff9d0661b48d33"/>

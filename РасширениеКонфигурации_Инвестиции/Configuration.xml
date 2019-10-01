@@ -61,7 +61,7 @@
 			<Document>РасходнаяНакладная</Document>
 			<Document>РасходСоСчета</Document>
 			<Document>ПоступлениеНаСчет</Document>
-			<DataProcessor>Инв_ПечатьЗаказаПоставщику</DataProcessor>
+			<DataProcessor>Инв_ПечатьТабЧастиЗапасы</DataProcessor>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>
