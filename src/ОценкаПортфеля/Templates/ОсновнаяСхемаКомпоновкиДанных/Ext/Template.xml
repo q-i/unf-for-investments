@@ -118,8 +118,31 @@
 				<dcscom:dimension>true</dcscom:dimension>
 			</role>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипДенежныхСредств</dataPath>
+			<field>ТипДенежныхСредств</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>БанковскийСчетКасса</dataPath>
+			<field>БанковскийСчетКасса</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Валюта</dataPath>
+			<field>Валюта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Раздел</dataPath>
+			<field>Раздел</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Раздел</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
+	"Финансовые вложения" КАК Раздел,
 	ЗапасыОстатки.Организация КАК Организация,
 	ЗапасыОстатки.СтруктурнаяЕдиница КАК МестоХранения,
 	ЗапасыОстатки.Номенклатура КАК Номенклатура,
@@ -131,7 +154,23 @@
 	РегистрНакопления.Запасы.Остатки({(&amp;ДатаОтчета)}, ) КАК ЗапасыОстатки
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныНоменклатуры.СрезПоследних({(&amp;ДатаОтчета)}, ВидЦен = &amp;ВидЦен) КАК ЦеныНоменклатурыСрезПоследних
 		ПО ЗапасыОстатки.Номенклатура = ЦеныНоменклатурыСрезПоследних.Номенклатура
-			И ЗапасыОстатки.Характеристика = ЦеныНоменклатурыСрезПоследних.Характеристика</query>
+			И ЗапасыОстатки.Характеристика = ЦеныНоменклатурыСрезПоследних.Характеристика
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Денежные средства",
+	ДенежныеСредстваОстатки.Организация,
+	ДенежныеСредстваОстатки.БанковскийСчетКасса,
+	ДенежныеСредстваОстатки.Валюта,
+	ДенежныеСредстваОстатки.ТипДенежныхСредств,
+	ДенежныеСредстваОстатки.СуммаВалОстаток,
+	ДенежныеСредстваОстатки.СуммаВалОстаток * КурсыВалютСрезПоследних.Курс / КурсыВалютСрезПоследних.Кратность,
+	КурсыВалютСрезПоследних.Курс / КурсыВалютСрезПоследних.Кратность
+ИЗ
+	РегистрНакопления.ДенежныеСредства.Остатки({(&amp;ДатаОтчета)}, ) КАК ДенежныеСредстваОстатки
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КурсыВалют.СрезПоследних({(&amp;ДатаОтчета)}, ) КАК КурсыВалютСрезПоследних
+		ПО ДенежныеСредстваОстатки.Валюта = КурсыВалютСрезПоследних.Валюта</query>
 	</dataSet>
 	<calculatedField>
 		<dataPath>СредняяЦенаПокупки</dataPath>
@@ -228,6 +267,7 @@
 	<totalField>
 		<dataPath>Количество</dataPath>
 		<expression>Сумма(Количество)</expression>
+		<group>Номенклатура</group>
 	</totalField>
 	<totalField>
 		<dataPath>Маржа</dataPath>
@@ -373,7 +413,7 @@
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>МестоХранения</dcsset:field>
+						<dcsset:field>Раздел</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -389,8 +429,8 @@
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
 					<dcsset:groupItems>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>Номенклатура</dcsset:field>
-							<dcsset:groupType>Hierarchy</dcsset:groupType>
+							<dcsset:field>МестоХранения</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
 							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
@@ -402,6 +442,23 @@
 					<dcsset:selection>
 						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Номенклатура</dcsset:field>
+								<dcsset:groupType>Hierarchy</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
 				</dcsset:item>
 			</dcsset:item>
 		</dcsset:settings>
