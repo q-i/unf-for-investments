@@ -196,19 +196,19 @@
 			</c>
 			<c>
 				<c>
-					<f>8</f>
+					<f>13</f>
 					<parameter>КоличествоБумаг</parameter>
 				</c>
 			</c>
 			<c>
 				<c>
-					<f>13</f>
+					<f>14</f>
 					<parameter>Цена</parameter>
 				</c>
 			</c>
 			<c>
 				<c>
-					<f>14</f>
+					<f>15</f>
 					<parameter>Сумма</parameter>
 				</c>
 			</c>
@@ -244,7 +244,7 @@
 			</c>
 			<c>
 				<c>
-					<f>15</f>
+					<f>16</f>
 				</c>
 			</c>
 		</row>
@@ -275,7 +275,7 @@
 			</c>
 			<c>
 				<c>
-					<f>16</f>
+					<f>17</f>
 				</c>
 			</c>
 			<c>
@@ -285,14 +285,14 @@
 			</c>
 			<c>
 				<c>
-					<f>17</f>
+					<f>18</f>
 					<parameter>Сумма</parameter>
 				</c>
 			</c>
 		</row>
 	</rowsItem>
 	<templateMode>true</templateMode>
-	<defaultFormatIndex>18</defaultFormatIndex>
+	<defaultFormatIndex>19</defaultFormatIndex>
 	<height>12</height>
 	<vgRows>12</vgRows>
 	<namedItem xsi:type="NamedItemCells">
@@ -419,9 +419,22 @@
 		<width>72</width>
 	</format>
 	<format>
+		<border>0</border>
+		<width>72</width>
+		<textPlacement>Wrap</textPlacement>
+		<fillType>Parameter</fillType>
+		<format>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>ЧДЦ=2</v8:content>
+			</v8:item>
+		</format>
+	</format>
+	<format>
 		<font>1</font>
 		<border>0</border>
 		<width>72</width>
+		<textPlacement>Wrap</textPlacement>
 		<fillType>Parameter</fillType>
 		<format>
 			<v8:item>
@@ -434,6 +447,7 @@
 		<font>1</font>
 		<border>0</border>
 		<width>72</width>
+		<textPlacement>Wrap</textPlacement>
 		<fillType>Parameter</fillType>
 		<format>
 			<v8:item>
