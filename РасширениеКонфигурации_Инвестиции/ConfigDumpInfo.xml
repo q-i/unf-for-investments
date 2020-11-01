@@ -10,7 +10,7 @@
 		<Metadata name="CommonModule.ИнтернетПоддержкаПользователей.Module" id="78d52076-f941-4a68-acaa-443d3a8b743f.0" configVersion="23ea0e4a52af1d49e5e96283b0a65f8072427cba"/>
 		<Metadata name="Configuration.Инвестиции" id="4c3c16a1-a19f-4b4c-bf08-0cda3de10ac3" configVersion="fcb45fbe328a9e160cbf4a790078498215a0238d"/>
 		<Metadata name="DataProcessor.Инв_ПечатьТабЧастиЗапасы" id="264f8b20-6a2c-492f-9d67-27ee5790668a" configVersion="c5f308ea1ccea3f3c76bdc8e5e6031541d1b559f"/>
-		<Metadata name="DataProcessor.Инв_ПечатьТабЧастиЗапасы.ManagerModule" id="264f8b20-6a2c-492f-9d67-27ee5790668a.2" configVersion="5e14d6296a9693df11dedcb79422ba3e5be4b726"/>
+		<Metadata name="DataProcessor.Инв_ПечатьТабЧастиЗапасы.ManagerModule" id="264f8b20-6a2c-492f-9d67-27ee5790668a.2" configVersion="2cb89a7ab8126aba0e0d5a2376b21aaa21c9367e"/>
 		<Metadata name="DataProcessor.Инв_ПечатьТабЧастиЗапасы.Template.ПФ_MXL_Запасы" id="93b24910-4747-4ac2-8ec4-e9ab50827525" configVersion="63e43cc0befab7c22ea88eff6a0ee17fa13fbefe"/>
 		<Metadata name="DataProcessor.Инв_ПечатьТабЧастиЗапасы.Template.ПФ_MXL_Запасы.Template" id="93b24910-4747-4ac2-8ec4-e9ab50827525.0" configVersion="8df41d9f43c3c566dc3225ecefe0cae6df6a9b1d"/>
 		<Metadata name="Document.ПоступлениеНаСчет" id="807e9242-7ef6-4f4b-a9af-391865f58469" configVersion="40e69b274c9f04b748a3aeb1c1d8dc60d9a681f9"/>
